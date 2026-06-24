@@ -1,0 +1,36 @@
+{
+  "name": "wifi-signal-live",
+  "version": "0.1.0",
+  "description": "A minimal desktop app for watching live Wi-Fi signal strength.",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on tcp:5173 && npm run dev:electron\"",
+    "dev:electron": "tsc -p electron/tsconfig.json && electron .",
+    "build": "tsc -p tsconfig.json && vite build && tsc -p electron/tsconfig.json",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "npm run build"
+  },
+  "keywords": [
+    "wifi",
+    "signal",
+    "rssi",
+    "electron",
+    "typescript"
+  ],
+  "dependencies": {
+    "electron": "^39.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "wait-on": "^9.0.3"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wi-Fi Signal</title>
+  </head>
+  <body>
+    <main id="app">
+      <section class="signal-card" aria-live="polite">
+        <header class="top-row">
+          <div>
+            <p class="label"><span class="live-dot"></span>Live Wi-Fi Signal</p>
+            <h1 id="networkName">Checking Wi-Fi</h1>
+          </div>
+          <button id="refreshButton" type="button">Refresh</button>
+        </header>
+
+        <div class="meter" id="meter">
+          <div class="meter-glow"></div>
+          <div class="meter-core">
+            <span id="signalNumber">--</span>
+            <small>dBm</small>
+          </div>
+        </div>
+
+        <div class="signal-status">
+          <strong id="qualityText">Scanning</strong>
+          <span id="signalHint">Move around and the color will change.</span>
+        </div>
+
+        <div class="range" aria-hidden="true">
+          <div class="range-track">
+            <span class="range-fill"></span>
+            <span class="range-pin"></span>
+          </div>
+          <div class="range-labels">
+            <span>Far</span>
+            <span>Good</span>
+            <span>Close</span>
+          </div>
+        </div>
+
+        <footer class="details">
+          <span id="bandText">Band: --</span>
+          <span id="channelText">Channel: --</span>
+          <span id="updatedText">Updated: --</span>
+        </footer>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
